@@ -1,5 +1,10 @@
 # Easy Form Validation for PHP and JS
 
+<div style="display: flex">
+    <img src="https://user-images.githubusercontent.com/91938800/136624434-d0460a13-d4d4-470b-81bc-a1e2475c0e7f.gif" width="300">
+    <img src="https://user-images.githubusercontent.com/91938800/136624466-793201e9-30d4-4829-81e4-382afd2f8035.gif" width="300">
+</div>
+
 ## Overview
 
 Form validation with PHP and JS made easy! Simple is best, for quick development, user experience, and especially for security! All the basic security measures are taken care of (slashes, special characters). Just make sure to use the correct regex, and to access your database securely. By seperating the conditions from the code, you won't have to write and maintain the same thing twice in JS and PHP. You also won't have to write nearly as much code, significantly reducing the prevalence of bugs and security issues. This also works with Javascript disabled!
