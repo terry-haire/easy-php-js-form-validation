@@ -1,9 +1,6 @@
 # Easy Form Validation for PHP and JS
 
-<div style="display: flex">
-    <img src="https://user-images.githubusercontent.com/91938800/136624434-d0460a13-d4d4-470b-81bc-a1e2475c0e7f.gif" width="300">
-    <img src="https://user-images.githubusercontent.com/91938800/136624466-793201e9-30d4-4829-81e4-382afd2f8035.gif" width="300">
-</div>
+<img src="https://user-images.githubusercontent.com/91938800/136624434-d0460a13-d4d4-470b-81bc-a1e2475c0e7f.gif" width="300">
 
 ## Overview
 
@@ -90,3 +87,6 @@ Form validation with PHP and JS made easy! Simple is best, for quick development
     $forms->init_js();
 ?>
 ```
+
+## Without Javascript
+<img src="https://user-images.githubusercontent.com/91938800/136624466-793201e9-30d4-4829-81e4-382afd2f8035.gif" width="300">
