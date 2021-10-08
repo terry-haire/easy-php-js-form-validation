@@ -1,0 +1,13 @@
+{
+    "type":"postcode",
+    "min":6,
+    "max":6,
+    "required":true,
+    "patronen":[
+        {
+            "patroon":"/^[0-9]{4}[a-z]{2}/i",
+            "conditie":"-status-type",
+            "bericht":"Geldige postcode"
+        }
+    ]
+}

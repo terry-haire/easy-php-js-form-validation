@@ -1,0 +1,13 @@
+{
+    "type":"prijs",
+    "min":1,
+    "max":20000,
+    "required":true,
+    "patronen":[
+        {
+            "patroon":"/^[0-9]+[,][0-9]{2}$/i",
+            "conditie":"-status-type",
+            "bericht":"Alleen cijfers en een komma bijv. 0,00 of 2,95"
+        }
+    ]
+}

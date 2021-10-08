@@ -1,0 +1,13 @@
+{
+    "type":"teller",
+    "min":2,
+    "max":256,
+    "required":true,
+    "patronen":[
+        {
+            "patroon":"/^[a-zA-Z 0-9\n<>.,~`!@#$%^&*()_+-=;:]*$/",
+            "conditie":"-status-type",
+            "bericht":"Letters, cijfers en <>.,~`!@#$%^&*()_+-=;:"
+        }
+    ]
+}

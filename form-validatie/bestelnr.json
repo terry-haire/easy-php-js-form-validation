@@ -1,0 +1,13 @@
+{
+    "type":"bestelnr",
+    "min":9,
+    "max":9,
+    "required":false,
+    "patronen":[
+        {
+            "patroon":"/^[a-z0-9]*$/i",
+            "conditie":"-status-type",
+            "bericht":"Alleen cijfers en letters"
+        }
+    ]
+}

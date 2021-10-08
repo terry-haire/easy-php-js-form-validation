@@ -1,0 +1,18 @@
+{
+    "type":"straat",
+    "min":2,
+    "max":50,
+    "required":true,
+    "patronen":[
+        {
+            "patroon":"/^[a-z]+($|[ ])/i",
+            "conditie":"-status-type",
+            "bericht":"Straat"
+        },
+        {
+            "patroon":"/[ ][0-9]+/",
+            "conditie":"-status-huisnummer",
+            "bericht":"Huisnummer"
+        }
+    ]
+}

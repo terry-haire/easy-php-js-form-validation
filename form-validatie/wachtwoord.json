@@ -1,0 +1,23 @@
+{
+    "type":"wachtwoord",
+    "min":6,
+    "max":256,
+    "required":true,
+    "patronen":[
+        {
+            "patroon":"/[0-9]+/i",
+            "conditie":"-status-type",
+            "bericht":"Minstens 1 cijfer"
+        },
+        {
+            "patroon":"/[a-z]+/i",
+            "conditie":"-status-type-cijfer",
+            "bericht":"Minstens 1 letter"
+        },
+        {
+            "patroon":"/[!@#$%^&*()]+/i",
+            "conditie":"-status-type-speciaal",
+            "bericht":"Minstens 1 speciaal karakter (!@#$%^&*())"
+        }
+    ]
+}

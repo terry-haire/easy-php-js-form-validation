@@ -1,0 +1,13 @@
+{
+    "type":"text",
+    "min":2,
+    "max":120,
+    "required":true,
+    "patronen":[
+        {
+            "patroon":"/betaald|niet betaald/i",
+            "conditie":"-status-type",
+            "bericht":"Ongeldige status. Geldige statussen betaald of niet betaald"
+        }
+    ]
+}

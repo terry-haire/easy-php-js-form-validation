@@ -1,0 +1,13 @@
+{
+    "type":"winkelwagenVeld",
+    "min":1,
+    "max":5,
+    "required":true,
+    "patronen":[
+        {
+            "patroon":"/^[0-9]*$/i",
+            "conditie":"-status-type",
+            "bericht":"Alleen cijfers"
+        }
+    ]
+}

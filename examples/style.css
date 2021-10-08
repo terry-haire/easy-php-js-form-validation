@@ -1,0 +1,45 @@
+/* Styling voor de submit knop */
+
+.submit-aan {
+    cursor: pointer;
+}
+
+.submit-uit {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+/* Standaard styling voor condities */
+
+.status_goed, .status_init, .status_fout, .status_goed_js, .status_init_js, .status_fout_js {
+    font-size: 12px;
+    margin-left: 16px;
+    margin-top: 6px;
+}
+
+.status_goed {
+    /* display: block; */
+    color: green;
+}
+
+.status_goed_js {
+    display: block;
+    color: green;
+}
+
+.status_init_js {
+    display: none;
+}
+
+.status_init {
+    color: gray;
+}
+
+.status_fout {
+    color: red;
+}
+
+.status_fout_js {
+    display: block;
+    color: red;
+}

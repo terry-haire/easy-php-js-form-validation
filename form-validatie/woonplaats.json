@@ -1,0 +1,13 @@
+{
+    "type":"woonplaats",
+    "min":2,
+    "max":51,
+    "required":true,
+    "patronen":[
+        {
+            "patroon":"/^[a-z -]*$/i",
+            "conditie":"-status-type",
+            "bericht":"Letters en streepjes"
+        }
+    ]
+}

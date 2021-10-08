@@ -1,0 +1,13 @@
+{
+    "type":"datum",
+    "min":10,
+    "max":10,
+    "required":false,
+    "patronen":[
+        {
+            "patroon":"/[0-9]{4}-[0-9]{2}-[0-9]{2}/i",
+            "conditie":"-status-type",
+            "bericht":"Formaat: yyyy-mm-dd"
+        }
+    ]
+}

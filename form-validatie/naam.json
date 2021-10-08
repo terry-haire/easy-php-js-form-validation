@@ -1,0 +1,13 @@
+{
+    "type":"naam",
+    "min":2,
+    "max":50,
+    "required":true,
+    "patronen":[
+        {
+            "patroon":"/^[a-z ]*$/i",
+            "conditie":"-status-type",
+            "bericht":"Alleen normale letters"
+        }
+    ]
+}

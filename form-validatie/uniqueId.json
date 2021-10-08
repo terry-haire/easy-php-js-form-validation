@@ -1,0 +1,13 @@
+{
+    "type":"id",
+    "min":9,
+    "max":9,
+    "required":true,
+    "patronen":[
+        {
+            "patroon":"/^[0-9]*$/i",
+            "conditie":"-status-type",
+            "bericht":"Geldig id"
+        }
+    ]
+}

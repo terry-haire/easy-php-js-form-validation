@@ -1,0 +1,13 @@
+{
+    "type":"text",
+    "min":2,
+    "max":120,
+    "required":true,
+    "patronen":[
+        {
+            "patroon":"/geannuleerd|in behandeling|verzonden|bezorgd/i",
+            "conditie":"-status-type",
+            "bericht":"Ongeldige status. Geldige statussen zijn geannuleerd, in behandeling, verzonden of bezorgd"
+        }
+    ]
+}
