@@ -18,17 +18,17 @@ Form validation with PHP and JS made easy! Simple is best, for quick development
 * `CONDITION_IDENTIFIER <str>` - id suffix for further javascript access.
 * `VALID_INPUT_DESCRIPTION <str>` - Description of valid input for the end user.
 
-```
+```js
 {
-    "type":"<TYPE>",
-    "min":<MINIMUM_LENGTH>,
-    "max":<MAXIMUM_LENGTH>,
-    "required":<REQUIRED>,
+    "type": TYPE,
+    "min": MINIMUM_LENGTH,
+    "max": MAXIMUM_LENGTH,
+    "required": REQUIRED,
     "patronen":[
         {
-            "patroon":"<REGEX_PATTERN>",
-            "conditie":"<CONDITION_IDENTIFIER>",
-            "bericht":"<VALID_INPUT_DESCRIPTION>"
+            "patroon": REGEX_PATTERN,
+            "conditie": CONDITION_IDENTIFIER,
+            "bericht": VALID_INPUT_DESCRIPTION
         }
     ]
 }
@@ -39,7 +39,7 @@ Form validation with PHP and JS made easy! Simple is best, for quick development
 * `INPUT_RULES_FILE <str>` - Filename containing the rules.
 * `PLACEHOLDER <str>` - HTML placeholder attribute value.
 * `SUBMIT_ID <str>` - ID of the submission button.
-```
+```php
 <?php
     require_once $_SERVER['DOCUMENT_ROOT'] . "/form-validatie/functies.php";
 
@@ -62,7 +62,7 @@ Form validation with PHP and JS made easy! Simple is best, for quick development
 ```
 
 3. Paste the following snippet to create the input for the end user.
-```
+```php
 <form name="<FORM_NAME>" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
     // Create the actual input in HTML. The init function adds all the required attributes.
     <input type="<INPUT_TYPE>" <?php $forms->get('<INPUT_NAME>')->init(); ?> placeholder="<PLACEHOLDER>" required>
@@ -78,7 +78,7 @@ Form validation with PHP and JS made easy! Simple is best, for quick development
 </form>
 ```
 4. Add the following at the end to automatically create the Javascript and make the form dynamic.
-```
+```php
 <script src="/form-validatie/functies.js"></script>
 <?php
     // Register the submission button.
