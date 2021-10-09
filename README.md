@@ -8,7 +8,7 @@ Form validation with PHP and JS made easy! Simple is best, for quick development
 
 ## Usage
 
-1. Define the rules for the input in a JSON file inside `form-validatie` with the following fields. Or use one of the included json files I used for a webshop project.
+1. Define the rules for the input in a JSON file inside `easy-form-validation` with the following fields. Or use one of the included json files I used for a webshop project.
 
 * `TYPE <str>` - HTML form type e.g. `text`, `email`, etc.
 * `MINIMUM_LENGTH <int>` - Minimum input length.
@@ -41,7 +41,7 @@ Form validation with PHP and JS made easy! Simple is best, for quick development
 * `SUBMIT_ID <str>` - ID of the submission button.
 ```php
 <?php
-    require_once $_SERVER['DOCUMENT_ROOT'] . "/form-validatie/functies.php";
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/easy-form-validation/functies.php";
 
     $template = new Template();
     $forms = new Forms();
@@ -79,7 +79,7 @@ Form validation with PHP and JS made easy! Simple is best, for quick development
 ```
 4. Add the following at the end to automatically create the Javascript and make the form dynamic.
 ```php
-<script src="/form-validatie/functies.js"></script>
+<script src="/easy-form-validation/functies.js"></script>
 <?php
     // Register the submission button.
     $forms->add_knop("<SUBMIT_ID>");
@@ -87,6 +87,10 @@ Form validation with PHP and JS made easy! Simple is best, for quick development
     $forms->init_js();
 ?>
 ```
+
+## Styling
+
+`easy-form-validation/config.json` defines the css classes used when an input is valid, invalid or in its default state. The suffix `_js` is added when javascript is enabled. The classes `submit-on` and `submit-off` control the submission button.
 
 ## Without Javascript
 <img src="https://user-images.githubusercontent.com/91938800/136624466-793201e9-30d4-4829-81e4-382afd2f8035.gif" width="300">

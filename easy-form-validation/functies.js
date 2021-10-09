@@ -288,12 +288,12 @@ class Form {
  */
 function schakelKnop (id, staat) {
   if (!staat) {
-    document.getElementById(id).classList.remove('submit-aan')
-    document.getElementById(id).classList.add('submit-uit')
+    document.getElementById(id).classList.remove('submit-on')
+    document.getElementById(id).classList.add('submit-off')
     document.getElementById(id).disabled = true
   } else {
-    document.getElementById(id).classList.remove('submit-uit')
-    document.getElementById(id).classList.add('submit-aan')
+    document.getElementById(id).classList.remove('submit-off')
+    document.getElementById(id).classList.add('submit-on')
     document.getElementById(id).disabled = false
   }
 }

@@ -1,40 +1,43 @@
+<link rel="stylesheet" href="/examples/style-feedback.css">
 <link rel="stylesheet" href="/examples/style.css">
 <?php
-    require_once $_SERVER['DOCUMENT_ROOT'] . "/form-validatie/functies.php";
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/easy-form-validation/functies.php";
 
     $template = new Template();
     $forms = new Forms();
 
     $forms->add('email', new Form("myForm", "email", $template, "email.json"));
-    $forms->add('wachtwoord', new Form("myForm", "wachtwoord", $template, "wachtwoord.json"));
+    $forms->add('password', new Form("myForm", "password", $template, "password.json"));
 
     $forms->set_status();
 
     if (isset($forms) && $forms->valideer()) {
         $email = $forms->get('email')->get_input();
-        $wachtwoord = $forms->get('wachtwoord')->get_input();
+        $password = $forms->get('password')->get_input();
 
         echo "LOGGED IN";
     }
 ?>
 
-<h1>Log in</h1>
+<div class="root">
+    <p class="bold header">Log in</p>
 
-<form name="myForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-    <input type="email" <?php $forms->get('email')->init(); ?> placeholder="E-mail adres" required><br>
-    <?php $forms->get('email')->print(); ?>
+    <form name="myForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+        <input type="email" <?php $forms->get('email')->init(); ?> placeholder="E-mail adres" required>
+        <?php $forms->get('email')->print(); ?>
 
-    <input type="password" <?php $forms->get('wachtwoord')->init(); ?> placeholder="Wachtwoord" required><br>
-    <?php $forms->get('wachtwoord')->print(); ?>
+        <input type="password" <?php $forms->get('password')->init(); ?> placeholder="Password" required>
+        <?php $forms->get('password')->print(); ?>
 
-    <!-- Inloggen -->
-    <input id="login" class="submit-aan" type="submit" value="Log in"><br>
+        <!-- Inloggen -->
+        <input id="login" class="submit-on bold" type="submit" value="Log in">
 
-    <?php for_get(['ref']); ?>
-</form>
+        <?php for_get(['ref']); ?>
+    </form>
+</div>
 
 
-<script src="/form-validatie/functies.js"></script>
+<script src="/easy-form-validation/functies.js"></script>
 <?php
     $forms->add_knop("login");
     $forms->init_js();

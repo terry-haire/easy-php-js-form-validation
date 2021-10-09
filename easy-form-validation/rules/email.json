@@ -1,13 +1,13 @@
 {
     "type":"email",
-    "min":2,
+    "min":6,
     "max":50,
     "required":true,
     "patronen":[
         {
             "patroon":"",
             "conditie":"-status-type",
-            "bericht":"Geldig email adres"
+            "bericht":"Valid email address"
         }
     ]
 }

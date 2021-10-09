@@ -71,13 +71,31 @@ class Template {
     public $tag = "li";
     public $attributen = "";
 
-    public $class_goed_js = "status_goed_js";
-    public $class_init_js = "status_init_js";
-    public $class_fout_js = "status_fout_js";
+    public $class_goed_js = "";
+    public $class_init_js = "";
+    public $class_fout_js = "";
 
-    public $class_goed = "status_goed";
-    public $class_init = "status_init";
-    public $class_fout = "status_fout";
+    public $class_goed = "";
+    public $class_init = "";
+    public $class_fout = "";
+
+    function __construct() {
+        /** Load config JSON. */
+        $json = json_decode(file_get_contents(__DIR__ . "/config.json"), true);
+        if (!$json) {
+            throw new Exception("Error loading config json");
+        }
+
+        $classes = $json["classes"];
+
+        $this->class_goed_js = $classes["valid"] . "_js";
+        $this->class_init_js = $classes["init"] . "_js";
+        $this->class_fout_js = $classes["invalid"] . "_js";
+
+        $this->class_goed = $classes["valid"];
+        $this->class_init = $classes["init"];
+        $this->class_fout = $classes["invalid"];
+    }
 }
 
 /**
@@ -188,7 +206,7 @@ class Form {
      */
     function __construct($form, $naam, $template, $json_naam) {
         /** Haal de gegeven JSON op als string. */
-        $str = file_get_contents($_SERVER["DOCUMENT_ROOT"] . "/form-validatie" . "/" . $json_naam);
+        $str = file_get_contents(__DIR__ . "/rules/" . $json_naam);
         if (!$str) {
             throw new Exception("Error bij het laden van het bestand!!!");
         }
@@ -499,7 +517,7 @@ HTML;
      * @param status De status van de conditie.
      */
     private function write_min($min, $status) {
-        $this->write("Minimaal $min karakters", "-status-min", $status);
+        $this->write("At least $min characters", "-status-min", $status);
     }
 
     /**
@@ -508,7 +526,7 @@ HTML;
      * @param status De status van de conditie.
      */
     private function write_max($max, $status) {
-        $this->write("Maximaal $max karakters", "-status-max", $status);
+        $this->write("At most $max characters", "-status-max", $status);
     }
 
     /**
@@ -517,7 +535,7 @@ HTML;
      * @param status De status van de conditie.
      */
     private function write_exact($len, $status) {
-        $this->write("Precies $len karakters", "-status-exact", $status);
+        $this->write("Exactly $len characters", "-status-exact", $status);
     }
 
     /**

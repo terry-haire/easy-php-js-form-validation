@@ -1,0 +1,7 @@
+{
+    "classes": {
+        "init": "status_init",
+        "valid": "status_valid",
+        "invalid": "status_invalid"
+    }
+}

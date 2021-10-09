@@ -1,0 +1,82 @@
+.submit-on {
+    cursor: pointer;
+}
+
+.submit-off {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+.status_valid,
+.status_init,
+.status_invalid,
+.status_valid_js,
+.status_init_js,
+.status_invalid_js {
+    font-size: 12px;
+    margin-left: 16px;
+    margin-top: 6px;
+}
+
+.status_valid_js,
+.status_init_js,
+.status_invalid_js {
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+.status_valid {
+    color: green;
+}
+
+.status_valid_js {
+    display: block;
+    color: green;
+    text-shadow: 0 0 10px green;
+}
+
+.status_init_js {
+    color: gray;
+}
+
+.status_init {
+    color: gray;
+}
+
+.status_invalid {
+    color: red;
+}
+
+.status_invalid_js {
+    display: block;
+    color: red;
+    text-shadow: 0 0 10px red;
+}
+
+
+/* Glowing link */
+a {
+    color: #00e;
+}
+a:visited {
+    color: #551a8b;
+}
+a:hover {
+    color: #06e;
+}
+a:focus {
+    outline: thin dotted;
+}
+a:hover, a:active {
+    outline: 0;
+}
+a, a:visited, a:active {
+    text-decoration: none;
+    color: #fff;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+a:hover, .glow {
+    color: #fff;
+    text-shadow: 0 0 10px #fff;
+}
