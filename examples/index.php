@@ -1,25 +1,26 @@
 <link rel="stylesheet" href="/examples/style-feedback.css">
 <link rel="stylesheet" href="/examples/style.css">
-<?php
-    require_once $_SERVER['DOCUMENT_ROOT'] . "/easy-form-validation/functies.php";
-
-    $template = new Template();
-    $forms = new Forms();
-
-    $forms->add('email', new Form("myForm", "email", $template, "email.json"));
-    $forms->add('password', new Form("myForm", "password", $template, "password.json"));
-
-    $forms->set_status();
-
-    if (isset($forms) && $forms->valideer()) {
-        $email = $forms->get('email')->get_input();
-        $password = $forms->get('password')->get_input();
-
-        echo "LOGGED IN";
-    }
-?>
 
 <div class="root">
+    <?php
+        require_once $_SERVER['DOCUMENT_ROOT'] . "/easy-form-validation/functies.php";
+
+        $template = new Template();
+        $forms = new Forms();
+
+        $forms->add('email', new Form("myForm", "email", $template, "email.json"));
+        $forms->add('password', new Form("myForm", "password", $template, "password.json"));
+
+        $forms->set_status();
+
+        if (isset($forms) && $forms->valideer()) {
+            $email = $forms->get('email')->get_input();
+            $password = $forms->get('password')->get_input();
+
+            echo "<span id=\"logged_in\"><p>LOGGED IN AS</p><p>" . $email . "</p></span>";
+        }
+    ?>
+
     <p class="bold header">Log in</p>
 
     <form name="myForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">

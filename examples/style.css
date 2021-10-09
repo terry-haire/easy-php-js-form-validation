@@ -46,3 +46,27 @@ input {
 .header {
     align-self: center;
 }
+
+#logged_in {
+    font-size: large;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 20rem;
+    height: 25rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+
+#logged_in p {
+    color: white;
+    text-shadow: 0 0 10px white;
+    font-weight: 700;
+}
