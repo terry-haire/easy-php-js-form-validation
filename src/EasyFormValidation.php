@@ -235,11 +235,11 @@ class Form {
      * zijn met dezelfde id/name.
      * @param form      Naam van de form
      * @param naam      Naam mag geen "-" bevatten! Gebruik als het kan enkele woorden om styling consistent te houden!
-     * @param json_naam JSON Bestand naam bijv:"wachtwoord.json" (niet hele pad)
+     * @param json_path JSON path
      */
-    function __construct($form, $naam, $template, $json_naam) {
+    function __construct($form, $naam, $template, $json_path) {
         /** Haal de gegeven JSON op als string. */
-        $str = file_get_contents(__DIR__ . "/rules/" . $json_naam);
+        $str = file_get_contents($json_path);
         if (!$str) {
             throw new Exception("Error bij het laden van het bestand!!!");
         }

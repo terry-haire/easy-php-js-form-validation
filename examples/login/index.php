@@ -7,15 +7,15 @@
         ini_set('display_startup_errors', 1);
         error_reporting(E_ALL);
 
-        require_once $_SERVER['DOCUMENT_ROOT'] . "/easy-form-validation/functies.php";
+        require_once $_SERVER['DOCUMENT_ROOT'] . "/src/EasyFormValidation.php";
 
         // Load default template.
         $template = new Template();
         $forms = new Forms();
 
         // Register inputs.
-        $forms->add('email', new Form("myForm", "email", $template, "email.json"));
-        $forms->add('password', new Form("myForm", "password", $template, "password.json"));
+        $forms->add('email', new Form("myForm", "email", $template, "../rules/email.json"));
+        $forms->add('password', new Form("myForm", "password", $template, "../rules/password.json"));
 
         // Set the current status of the inputs.
         $forms->set_status();
@@ -44,7 +44,7 @@
 </div>
 
 
-<script src="/easy-form-validation/functies.js"></script>
+<script src="/src/EasyFormValidation.js"></script>
 <?php
     $forms->add_knop("login");
     $forms->init_js();
