@@ -10,19 +10,20 @@
         require_once $_SERVER['DOCUMENT_ROOT'] . "/src/EasyFormValidation.php";
 
         // Load default template.
-        $template = new Template();
-        $forms = new Forms();
+        $template = new \EasyFormValidation\Template();
+
+        $forms = new \EasyFormValidation\Forms();
 
         // Register inputs.
-        $forms->add('email', new Form("myForm", "email", $template, "../rules/email.json"));
-        $forms->add('password', new Form("myForm", "password", $template, "../rules/password.json"));
+        $forms->add('email', new \EasyFormValidation\Form("myForm", "email", $template, "../rules/email.json"));
+        $forms->add('pw', new \EasyFormValidation\Form("myForm", "password", $template, "../rules/password.json"));
 
         // Set the current status of the inputs.
         $forms->set_status();
 
         if (isset($forms) && $forms->valideer()) {
             $email = $forms->get('email')->get_input();
-            $password = $forms->get('password')->get_input();
+            $password = $forms->get('pw')->get_input();
 
             echo "<span id=\"logged_in\"><p>LOGGED IN AS</p><p>" . $email . "</p></span>";
         }
@@ -34,12 +35,12 @@
         <input type="email" <?php $forms->get('email')->init(); ?> placeholder="E-mail adres" required>
         <?php $forms->get('email')->print(); ?>
 
-        <input type="password" <?php $forms->get('password')->init(); ?> placeholder="Password" required>
-        <?php $forms->get('password')->print(); ?>
+        <input type="password" <?php $forms->get('pw')->init(); ?> placeholder="Password" required>
+        <?php $forms->get('pw')->print(); ?>
 
         <input id="login" class="submit-on bold" type="submit" value="Log in">
 
-        <?php for_get(['ref']); ?>
+        <?php \EasyFormValidation\for_get(['ref']); ?>
     </form>
 </div>
 

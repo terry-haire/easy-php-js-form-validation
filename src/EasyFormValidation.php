@@ -8,6 +8,8 @@
  */
 
 
+namespace EasyFormValidation;
+
 /**
  * Bron: W3Schools
  * Verwijder leading en trailing whitespace en maak de string veilig.
