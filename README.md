@@ -1,6 +1,6 @@
 # Easy Form Validation for PHP and JS
 
-<img src="https://user-images.githubusercontent.com/91938800/136624434-d0460a13-d4d4-470b-81bc-a1e2475c0e7f.gif" width="300">
+<img src="https://user-images.githubusercontent.com/91938800/136694241-5c5fe644-2e1d-418a-81f9-a1f448807077.gif" width="300">
 
 ## Overview
 
@@ -93,4 +93,4 @@ Form validation with PHP and JS made easy! Simple is best, for quick development
 `easy-form-validation/config.json` defines the css classes used when an input is valid, invalid or in its default state. The suffix `_js` is added when javascript is enabled. The classes `submit-on` and `submit-off` control the submission button.
 
 ## Without Javascript
-<img src="https://user-images.githubusercontent.com/91938800/136624466-793201e9-30d4-4829-81e4-382afd2f8035.gif" width="300">
+<img src="https://user-images.githubusercontent.com/91938800/136694349-736a519b-bb09-4380-8808-3b8dae369b8b.gif" width="300">
