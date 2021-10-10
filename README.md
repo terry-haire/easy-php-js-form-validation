@@ -49,7 +49,7 @@ Form validation with PHP and JS made easy! Simple is best, for quick development
     // Register an input.
     $forms->add('<INPUT_NAME>', new Form("<FORM_NAME>", "<INPUT_NAME>", $template, "<INPUT_RULES_FILE>"));
 
-    // [No JS] Check the submitted form.
+    // Set the status of the inputs.
     $forms->set_status();
 
     if (isset($forms) && $forms->valideer()) {
