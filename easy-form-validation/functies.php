@@ -79,7 +79,39 @@ class Template {
     public $class_init = "";
     public $class_fout = "";
 
-    function __construct() {
+    public function __construct()
+    {
+        $arguments = func_get_args();
+        $numberOfArguments = func_num_args();
+
+        if (method_exists($this, $function = '__construct'.$numberOfArguments)) {
+            call_user_func_array(array($this, $function), $arguments);
+        }
+    }
+
+    /**
+     * Create the CSS template.
+     * @param init       CSS classname when the input is initialized / empty / default.
+     * @param invalid    CSS classname when the input is invalid.
+     * @param valid      CSS classname when the input is valid.
+     * @param init_js    CSS classname when javascript is enabled.
+     * @param invalid_js CSS classname when javascript is enabled.
+     * @param valid_js   CSS classname when javascript is enabled.
+     */
+    function __construct6($init, $invalid, $valid, $init_js, $invalid_js, $valid_js) {
+        $this->class_init = $init;
+        $this->class_fout = $invalid;
+        $this->class_goed = $valid;
+
+        $this->class_init_js = $init_js;
+        $this->class_fout_js = $invalid_js;
+        $this->class_goed_js = $valid_js;
+    }
+
+    /**
+     * Load default classes from config.json.
+     */
+    function __construct0() {
         /** Load config JSON. */
         $json = json_decode(file_get_contents(__DIR__ . "/config.json"), true);
         if (!$json) {
@@ -88,13 +120,14 @@ class Template {
 
         $classes = $json["classes"];
 
-        $this->class_goed_js = $classes["valid"] . "_js";
-        $this->class_init_js = $classes["init"] . "_js";
-        $this->class_fout_js = $classes["invalid"] . "_js";
-
-        $this->class_goed = $classes["valid"];
-        $this->class_init = $classes["init"];
-        $this->class_fout = $classes["invalid"];
+        $this->__construct6(
+            $classes["init"],
+            $classes["invalid"],
+            $classes["valid"],
+            $classes["init"] . "_js",
+            $classes["invalid"] . "_js",
+            $classes["valid"] . "_js",
+        );
     }
 }
 
@@ -334,15 +367,10 @@ HTML;
 
                 $this->print_teller(strlen($str), false);
 
-                /** Geen && gebruiken voor als de eerste fout is */
-                if ($this->valideer_lengte($str)) {
-                    $resultaat = true;
-                }
+                $resultaat = false;
 
-                if ($this->valideer_condities($str) && $resultaat) {
+                if ($this->valideer_lengte($str) & $this->valideer_condities($str)) {
                     $resultaat = true;
-                } else {
-                    $resultaat = false;
                 }
 
                 $this->status = $resultaat;
