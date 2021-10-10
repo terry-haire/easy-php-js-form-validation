@@ -34,9 +34,9 @@ Form validation with PHP and JS made easy! Simple is best, for quick development
 }
 ```
 2. Add the following before the form to initialize all required objects and to process POST requests:
-* `INPUT_NAME <str>` - This will be the name attribute of the form. Make it unique.
+* `INPUT_NAME <str>` - This will be the name attribute of the input. Make it unique.
 * `FORM_NAME <str>` - Name of the form being used. Don't use any characters like '`-`' that don't work for variables in JS.
-* `INPUT_RULES_FILE <str>` - Filename containing the rules.
+* `INPUT_RULES_FILE <str>` - Name of the file containing the rules.
 * `PLACEHOLDER <str>` - HTML placeholder attribute value.
 * `SUBMIT_ID <str>` - ID of the submission button.
 ```php
