@@ -3,14 +3,21 @@
 
 <div class="root">
     <?php
+        ini_set('display_errors', 1);
+        ini_set('display_startup_errors', 1);
+        error_reporting(E_ALL);
+
         require_once $_SERVER['DOCUMENT_ROOT'] . "/easy-form-validation/functies.php";
 
+        // Load default template.
         $template = new Template();
         $forms = new Forms();
 
+        // Register inputs.
         $forms->add('email', new Form("myForm", "email", $template, "email.json"));
         $forms->add('password', new Form("myForm", "password", $template, "password.json"));
 
+        // Set the current status of the inputs.
         $forms->set_status();
 
         if (isset($forms) && $forms->valideer()) {
@@ -30,7 +37,6 @@
         <input type="password" <?php $forms->get('password')->init(); ?> placeholder="Password" required>
         <?php $forms->get('password')->print(); ?>
 
-        <!-- Inloggen -->
         <input id="login" class="submit-on bold" type="submit" value="Log in">
 
         <?php for_get(['ref']); ?>
