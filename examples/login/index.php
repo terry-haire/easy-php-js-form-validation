@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="/examples/style-feedback.css">
-<link rel="stylesheet" href="/examples/style.css">
+<link rel="stylesheet" href="style-feedback.css">
+<link rel="stylesheet" href="style.css">
 
 <div class="root">
     <?php
