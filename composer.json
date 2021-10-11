@@ -1,0 +1,18 @@
+{
+    "name": "terry-haire/easy-php-js-form-validation",
+    "description": "Easy Form Validation for PHP and JS",
+    "type": "library",
+    "license": "Apache-2.0",
+    "autoload": {
+        "psr-4": {
+            "TerryHaire\\EasyFormValidation\\": "src"
+        }
+    },
+    "authors": [
+        {
+            "name": "Terry Haire",
+            "email": "terry.wilson.h@gmail.com"
+        }
+    ],
+    "require": {}
+}
